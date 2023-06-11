@@ -1,4 +1,4 @@
-package com.godeltechnologies.bank.exception;
+package com.gifted.rssfeed.exception;
 
 import java.time.Instant;
 
