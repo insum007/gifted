@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gifted.rssfeed.model.Item;
 import com.gifted.rssfeed.service.RssService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class RssController {
 
 	@Autowired
@@ -17,7 +20,7 @@ public class RssController {
 
 	@GetMapping("/items")
 	public List<Item> getItems() {
-
+		log.info("Inside getItems method of RssController");
 		return rssService.getItems();
 
 	}

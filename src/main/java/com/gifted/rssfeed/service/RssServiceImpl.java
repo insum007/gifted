@@ -14,7 +14,10 @@ import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class RssServiceImpl implements RssService {
 
 	@Value("${consume.url}")
@@ -24,12 +27,14 @@ public class RssServiceImpl implements RssService {
 	private ItemRepository itemRepository;
 
 	public List<Item> getItems() {
+		log.info("Inside getItems method of RssService");
 		saveFeeds();
 		return itemRepository.findAll();
 	}
 
 	@Override
 	public void saveFeeds() {
+		log.info("Inside saveFeeds method of RssService");
 		try {
 
 			try (XmlReader reader = new XmlReader(new URL(consumeUrl))) {
