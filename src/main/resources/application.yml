@@ -1,0 +1,5 @@
+server:
+  port: 9001
+  
+consume:
+  url: 'http://feeds.feedburner.com/experiment_podcast'    
