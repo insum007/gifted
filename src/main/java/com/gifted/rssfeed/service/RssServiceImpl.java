@@ -56,8 +56,8 @@ public class RssServiceImpl implements RssService {
 
 		RssResponse rssResponse = new RssResponse();
 		rssResponse.setContent(listOfItems);
-		rssResponse.setPageNo(items.getNumber());
-		rssResponse.setPageSize(items.getSize());
+		rssResponse.setPage(items.getNumber());
+		rssResponse.setPage(items.getSize());
 		rssResponse.setTotalElements(items.getTotalElements());
 		rssResponse.setTotalPages(items.getTotalPages());
 		rssResponse.setLast(items.isLast());
